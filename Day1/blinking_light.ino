@@ -34,7 +34,7 @@ void loop() {
   if (tempC >= TEMPERATURE_THRESHOLD_C) {
     Serial.println("[ALERT] TOO HOT!");
     for (int i = 0; i < 3; i++) {
-      neopixelWrite(LED_PIN, 100, 0, 100);
+      neopixelWrite(LED_PIN, 255, 0, 0);
       delay(200);
       neopixelWrite(LED_PIN, 0, 0, 0);
       delay(200);
