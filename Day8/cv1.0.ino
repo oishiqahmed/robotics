@@ -2,8 +2,8 @@
 #include <WebServer.h>
 #include <ESP32Servo.h>
 
-const char *ssid = "oplus_co_apexpk";
-const char *password = "vzti4352";
+const char *ssid = "...";
+const char *password = "...";
 
 WebServer server(80);
 
@@ -79,13 +79,13 @@ void setup()
 {
     Serial.begin(115200);
 
+    WiFi.begin(ssid, password);
+
     servo1.attach(servoPin1);
     servo2.attach(servoPin2);
 
     servo1.write(currentAngle1);
     servo2.write(currentAngle2);
-
-    WiFi.begin(ssid, password);
 
     Serial.print("Connecting");
 
