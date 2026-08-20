@@ -2,7 +2,7 @@ import speech_recognition as sr
 import pyttsx3
 import requests
 
-ESP32_IP = "10.129.200.225"
+ESP32_IP = "..."
 
 def move_servo(servo_number, angle):
     angle = max(0, min(180, angle))
@@ -37,7 +37,7 @@ def listen():
 
     with sr.Microphone() as source:
         print("\nListening...")
-        recognizer.adjust_for_ambient_noise(source, duration=1.5)
+        recognizer.adjust_for_ambient_noise(source, duration=1.0)
         audio = recognizer.listen(source)
 
     try:
@@ -72,7 +72,7 @@ def run_assistant():
             elif "one hundred eighty" in command or ("one" in command and "eighty" in command) or "180" in command:
                 move_servo(1, 180)
 
-        elif "system" in command:
+        elif "servo" in command and ("two" in command or "2" in command):
             if "zero" in command or "0" in command:
                 move_servo(2, 0)
 
