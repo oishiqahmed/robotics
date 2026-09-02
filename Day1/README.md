@@ -1,5 +1,3 @@
-# Day 1
-
 ### Components:
 - Dual-core ESP32-S3 WROOM-1 Microcontroller
 - DS18B20 Waterproof Temperature Sensor
@@ -12,4 +10,4 @@ Since I didn't have an external resistor I had to use the inter resister of the 
 I've written and uploaded C++ code using core Arduino blocks, installed and utilized externsl libraries (```OneWire``` and ```DallasTemperature```) to read real=world environmental data.
 I've identified the onboard WS2812 NeoPixel LED on GPIO 48 and controlled RGB color spectrum mixing using ```neopixelWrite(pin, Red, Green, Blue)```
 
-I've created a real-time smart alert system that evaluates temperature threshold and triggers an automated visual signal (Red light) if the temperature reaches the limit. It keeps printing current temperature every two secons on the Serial Monitor.
+I've created a simple real-time smart alert system that evaluates temperature threshold and triggers an automated visual signal (Red light) if the temperature reaches the limit. It keeps printing current temperature every two seconds on the Serial Monitor.
